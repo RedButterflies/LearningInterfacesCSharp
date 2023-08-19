@@ -5,8 +5,13 @@ interface IPlant
     void watering();
     void selling();
 }
+//adding one more interface
+interface IFlower
+{
+    void flower();
+}
 
-class Rose : IPlant
+class Rose : IPlant, IFlower
 {
     public string colour;
     public double weigth;
@@ -37,6 +42,21 @@ class Rose : IPlant
         {
             Console.WriteLine(colour);
         }
+    }
+    public void flower()
+    {
+        Console.WriteLine("Your rose is a flower! How many petals does it have? ");
+        int petal = Convert.ToInt32(Console.ReadLine());
+        if (petal < 0) { Console.WriteLine("A flower cannot have less tna 0 petals, such flowers do not exist"); }
+        else if (petal == 0) { Console.WriteLine("Your rose should have some petals, make sure it is alive and well"); }
+        else if (petal>0 && petal<50)
+        {
+            Console.WriteLine("The number of petals on your rose is not quite satisfying, maybe it's lacking nutrients");
+        }
+        else { Console.WriteLine("The number of petals on your rose is quite satisfactory"); }
+       
+             
+        
     }
 
     public void selling()
@@ -130,5 +150,6 @@ class Program
         rose.selling();
         rose.planting();
         rose.watering();
+        rose.flower();
     }
 }
