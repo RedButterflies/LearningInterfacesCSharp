@@ -19,7 +19,23 @@ class Rose : IPlant
 
     public void planting()
     {
+        Console.WriteLine("How many roses are you planting ?");
+        int howMany = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("How many colours of roses are you planning on planting?");
+        int colours = Convert.ToInt32(Console.ReadLine());
+        String[] RoseColours = new string[colours];
+        for (int i =0;i<colours; i++)
+        {
+            Console.WriteLine("Enter colour nr "+ Convert.ToInt16 (i+1));
+            RoseColours[i] = Convert.ToString(Console.Read());
 
+        }
+
+        Console.WriteLine("You are planning on planting "+colours+" roses in these colours:");
+        foreach (string colour in RoseColours)
+        {
+            Console.WriteLine(colour);
+        }
     }
 
     public void selling()
