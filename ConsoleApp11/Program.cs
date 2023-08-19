@@ -27,7 +27,8 @@ class Rose : IPlant
         for (int i =0;i<colours; i++)
         {
             Console.WriteLine("Enter colour nr "+ Convert.ToInt16 (i+1));
-            RoseColours[i] = Convert.ToString(Console.Read());
+            RoseColours[i] = Convert.ToString(Console.ReadLine());
+
 
         }
 
@@ -114,5 +115,20 @@ class Daisy : IPlant
         int evening = Convert.ToInt32(Console.ReadLine());
         int total = morning+ afternoon+ evening;
         Console.WriteLine("You use a total of "+total+" water buckets a day to water your daises. Remember not to overwater them !!!");
+    }
+}
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Daisy daisy = new Daisy(5, "blue");
+        Rose rose = new Rose("red", 5.5d);
+        daisy.planting();
+        daisy.watering();
+        daisy.selling();
+        rose.selling();
+        rose.planting();
+        rose.watering();
     }
 }
