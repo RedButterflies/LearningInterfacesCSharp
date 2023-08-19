@@ -81,16 +81,38 @@ class Daisy : IPlant
     }
     public void planting()
     {
-       
+        Console.WriteLine("Congratulations! You've planted a daisy!");
     }
 
     public void selling()
     {
-       
+        Console.WriteLine("Would you want to buy a daisy? Enter 1 if you do and 0 if you don't");
+        int answer = Convert.ToInt32(Console.ReadLine());
+        if (answer == 0)
+        {
+            Console.WriteLine("You do not want to buy a daisy, you might have to rethink your decision");
+
+        }
+        else if (answer == 1)
+        {
+            Console.WriteLine("What a great decision. You shall buy one from me ");
+
+        }
+        else
+        {
+            Console.WriteLine("You entered a wrong answer. Please try again");
+        }
     }
 
     public void watering()
     {
-       
+        Console.WriteLine("How many buckets of water do you use to water your daisies in the morning? ");
+        int morning= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("What about the afternoon? ");
+        int afternoon= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("And the evening? ");
+        int evening = Convert.ToInt32(Console.ReadLine());
+        int total = morning+ afternoon+ evening;
+        Console.WriteLine("You use a total of "+total+" water buckets a day to water your daises. Remember not to overwater them !!!");
     }
 }
