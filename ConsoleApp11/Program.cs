@@ -40,12 +40,33 @@ class Rose : IPlant
 
     public void selling()
     {
-        
+        Console.WriteLine("Would you like to buy a rose? Enter 1 if YES or 0 if NO ");
+        int answer = Convert.ToInt32(Console.ReadLine());
+        if (answer == 0)
+        {
+            Console.WriteLine("You do not want to buy a rose, which is a great pity");
+
+        }
+        else if (answer == 1)
+        {
+            Console.WriteLine("What a great decision. You shall buy one from me ");
+
+        }
+        else
+        {
+            Console.WriteLine("You entered a wrong answer. Please try again");
+        }
     }
 
     public void watering()
     {
-        
+        Console.WriteLine("How many roses did you water in the morning? ");
+        int morning = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("How many roses did you water in the evening?");
+        int evening = Convert.ToInt32(Console.ReadLine());
+        int sum = morning+ evening;
+        Console.WriteLine("You've watered "+sum+ " flowers today" );
+
     }
 }
 class Daisy : IPlant
